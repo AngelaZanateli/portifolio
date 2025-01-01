@@ -1,0 +1,194 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+    background-image: url('../imagens/background.jpeg'); 
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+    background-position: center center; /* Centraliza a imagem */
+    /* A altura do fundo será o mesmo da tela */
+    min-height: 100vh; /* garante que o fundo ocupe 100% da viewport, mesmo que o conteúdo não ocupe tudo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+
+}
+.container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Divide em 2 colunas */
+    grid-template-rows: auto 1fr auto; /* Divide em 3 linhas */
+    gap: 20px;
+}
+/* Estilos do cabeçalho */
+header{
+  grid-column: 1 / 3; /* Ocupa as duas colunas */
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+/* Linha abaixo do cabeçalho */
+header .underline {
+  height: 3px;
+  background: linear-gradient(to right, #03a9f4, #f441a5);
+  width: 200px;
+}
+
+/* Estilos da seção principal */
+main {
+    grid-column: 1;
+    padding-right: 20px;
+}
+.about p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/* Estilos dos links */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adiciona espaçamento entre os botões */
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    flex: 1 1 auto; /* Permite que os botões se expandam */
+}
+
+.btn i{
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.btn span{
+    font-size: 0.9em;
+}
+.linkedin {
+    background-color: #0077b5;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.github {
+    background-color: #333;
+}
+
+.curriculum {
+    background-color: #8e44ad;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+/* Estilos da barra lateral */
+aside {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column; /* Organizar os itens na vertical */
+  justify-content: flex-start; /* Alinhar no topo da barra lateral */
+  align-items: center;  /* Alinhar horizontalmente no centro */
+}
+.profile-image {
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+  margin-bottom: 20px; /* Espaçamento entre a imagem e os ícones */
+}
+.border-image{
+position: relative;
+width: 100%;
+border-radius: 50%;
+padding-bottom: 100%;
+overflow: hidden;
+}
+.profile-image img{
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/*Borda com cor */
+.border-image {
+border: 2px solid transparent;
+border-radius: 50%;
+  background: linear-gradient(to bottom left, #03a9f4, #f441a5) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+          mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+}
+
+/* Estilizando os ícones de tecnologia */
+.tech-icons i {
+  font-size: 1.2em;
+  margin: 0 5px; /* Adiciona espaçamento horizontal entre os ícones */
+}
+.tech-icons {
+  display: flex; /* Adiciona flexbox para o alinhamento */
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+  align-items: center; /* Centraliza verticalmente se tiverem alturas diferentes */
+}
+
+
+/* Estilos do rodapé */
+footer {
+grid-column: 1 / 3; /* Ocupa as duas colunas */
+text-align: left;
+  margin-top: 20px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+.container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto; /* Adapta as linhas */
+}
+header {
+  grid-column: 1; /* Ocupa a largura toda */
+  text-align: center;
+}
+main {
+  grid-column: 1;
+  padding-right: 0;
+}
+  aside {
+      grid-column: 1;
+  }
+footer {
+  grid-column: 1;
+  flex-direction: column;
+  align-items: center;
+}
+footer .tech-icons{
+    margin-top: 10px;
+    margin-left: 0;
+}
+}
